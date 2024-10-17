@@ -21,8 +21,6 @@ output/
 # either the 3rd party diff or IDEA:
 *.java.orig
 
-/src/main/resources/application.yml
-
 # Package Files
 **/build/libs/*.jar
 *.war
@@ -37,5 +35,3 @@ output/
 *.log.gz
 *.log-*.gz
 logs/
-
-/src/main/resources/application.yml
