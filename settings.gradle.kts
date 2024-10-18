@@ -6,3 +6,4 @@ rootProject.name = "boilerplate"
 include("dummyServer")
 include("loadBalancer")
 include("dummyServer1")
+include("eurekaServer")

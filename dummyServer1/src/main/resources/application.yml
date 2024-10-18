@@ -1,5 +1,5 @@
 spring:
   application:
-    name: dummy2
+    name: dummy
 server:
   port: 8082

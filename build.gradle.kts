@@ -1,4 +1,3 @@
-
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
@@ -32,8 +31,7 @@ allprojects {
     }
 }
 
-subprojects{
-
+subprojects {
 
     apply(plugin = "org.springframework.boot")
     apply(plugin = "io.spring.dependency-management")

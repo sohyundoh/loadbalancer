@@ -6,13 +6,12 @@ import org.springframework.web.bind.annotation.RestController
 
 
 @RestController
-class Test1Controller {
-
-    @Value("\${spring.application.name}")
-    lateinit var serverName: String
+class TestDummyController {
+    @Value("\${server.port}")
+    lateinit var serverPort: String
 
     @GetMapping("/test")
     fun test(): String {
-        return serverName + "test"
+        return "$serverPort 에서 실행되고 있음 test"
     }
 }
