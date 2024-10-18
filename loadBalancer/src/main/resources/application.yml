@@ -1,4 +1,8 @@
 server:
+  connection-time-out:
+    seconds: 7
+  write-time-out:
+    seconds: 5
   port: 8080
 
 instance:
