@@ -10,9 +10,8 @@ spring:
     redis:
       host: redis-cache
       port: 6379
-
-instance:
-  name: load-balance
+  application:
+    name: load-balancer
 
 eureka:
   client:
