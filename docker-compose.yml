@@ -1,0 +1,51 @@
+version: '3'
+
+services:
+  eureka-server:
+    image: eureka-server
+    container_name: eureka-server
+    ports:
+      - "8761:8761"
+    networks:
+      - load-balancer-network
+
+  dummy_server:
+    image: dummy_server  # Docker 이미지 이름
+    container_name: dummy_server
+    ports:
+      - "8081:8081"
+    networks:
+      - load-balancer-network
+
+  dummy_server1:
+    image: dummy_server1
+    container_name: dummy_server1
+    ports:
+      - "8082:8082"
+    networks:
+      - load-balancer-network
+
+  load_balancer:
+    image: load_balancer
+    container_name: load_balancer
+    ports:
+      - "8080:8080"
+    networks:
+      - load-balancer-network
+
+  redis:
+    image: "redis:alpine"
+    container_name: redis-cache
+    ports:
+      - "6379:6379"
+    networks:
+      - load-balancer-network
+    healthcheck:
+      test: [ "CMD", "redis-cli", "ping" ]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+networks:
+  load-balancer-network:
+    driver: bridge

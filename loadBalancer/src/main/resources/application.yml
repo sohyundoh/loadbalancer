@@ -5,12 +5,18 @@ server:
     seconds: 5
   port: 8080
 
+spring:
+  data:
+    redis:
+      host: redis-cache
+      port: 6379
+
 instance:
   name: load-balance
 
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:8761/eureka/
+      defaultZone: http://eureka-server:8761/eureka/
   instance:
     prefer-ip-address: true
