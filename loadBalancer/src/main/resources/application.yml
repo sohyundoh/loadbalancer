@@ -18,9 +18,11 @@ resilience4j:
   circuitbreaker:
     configs:
       default:
-        slidingWindowSize: 5
-        failureRateThreshold: 10
+        slidingWindowSize: 10
+        failureRateThreshold: 50
         waitDurationInOpenState: 5000
+        slowCallRateThreshold : 50
+        minimumNumberOfCalls : 3
         permittedNumberOfCallsInHalfOpenState: 5
         registerHealthIndicator: true
       testCircuitBreaker:
@@ -30,6 +32,7 @@ management:
   health:
     circuitbreakers:
       enabled: true
+
   endpoint:
     health:
       showDetails: always
