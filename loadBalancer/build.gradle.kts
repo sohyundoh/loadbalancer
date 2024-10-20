@@ -5,6 +5,7 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-cache")
     implementation("org.springframework.cloud:spring-cloud-starter-loadbalancer")
     implementation("io.github.resilience4j:resilience4j-spring-boot2")
+    implementation("io.github.resilience4j:resilience4j-reactor:2.2.0")
     implementation("org.springframework.boot:spring-boot-starter-aop")
     implementation("org.springframework.boot:spring-boot-starter-actuator")
     implementation("io.github.oshai:kotlin-logging-jvm:5.1.1")

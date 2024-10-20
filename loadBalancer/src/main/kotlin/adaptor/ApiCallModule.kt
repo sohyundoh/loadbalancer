@@ -21,14 +21,10 @@ class ApiCallModule(
             .get()
             .uri("http://dummy/test/$id")
             .retrieve()
-            .onStatus({ status -> status.is4xxClientError || status.is5xxServerError }) { response ->
-                Mono.error(RuntimeException("Service call failed with status code: ${response.statusCode()}"))
-            }
             .bodyToMono(String::class.java)
-            .doOnError { e -> log.error { "Exception during WebClient call: ${e.message}" } }
     }
 
-    fun testFallBack(id: Long, e: Exception): Mono<String> {
+    fun testFallBack(id: Long, e: Throwable): Mono<String> {
         log.error { ">> ERROR : FALL BACK OCCUR -> ${e.message}" }
         return Mono.just("Error occurs, Try few minutes later")
     }
