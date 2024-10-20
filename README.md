@@ -1,5 +1,12 @@
-# Load Balancer Boiler plate
-해당 어플리케이션은 LoadBalancer와 내부의 Dummy Server를 구축한 BoilerPlate 프로젝트입니다.
+# Load Balancer Boilerplate
+해당 어플리케이션은 LoadBalancer와 내부의 Dummy Server를 구축한 Boilerplate 프로젝트입니다.
+
+## 사용한 Infra
+- `resilience4j` for Circuit Breaker
+- `redis` for Cache
+- `spring cloud` for Load Balancing
+- `WebClient` for Api Calling
+
 ## 사용 방법 
 
 git clone을 받은 뒤 해당 어플리케이션 폴더에서 다음 명령어를 입력해주세요.
