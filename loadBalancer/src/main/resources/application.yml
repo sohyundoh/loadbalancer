@@ -13,6 +13,37 @@ spring:
   application:
     name: load-balancer
 
+
+resilience4j:
+  circuitbreaker:
+    configs:
+      default:
+        slidingWindowSize: 5
+        failureRateThreshold: 10
+        waitDurationInOpenState: 5000
+        permittedNumberOfCallsInHalfOpenState: 5
+        registerHealthIndicator: true
+      testCircuitBreaker:
+        baseConfig: default
+
+management:
+  health:
+    circuitbreakers:
+      enabled: true
+  endpoint:
+    health:
+      showDetails: always
+    web:
+      exposure:
+        include: "*"
+      expose: "*"
+    metrics:
+      enabled: true
+  metrics:
+    enable:
+      resilience4j:
+        circuitbreaker:
+          calls: true
 eureka:
   client:
     serviceUrl:
