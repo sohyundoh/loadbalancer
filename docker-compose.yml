@@ -10,7 +10,7 @@ services:
       - load-balancer-network
 
   dummy_server:
-    image: dummy_server  # Docker 이미지 이름
+    image: dummy_server
     container_name: dummy_server
     ports:
       - "8081:8081"
