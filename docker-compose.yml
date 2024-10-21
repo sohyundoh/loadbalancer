@@ -1,33 +1,46 @@
-version: '3'
+version: '3.8'
 
 services:
   eureka-server:
-    image: eureka-server
+    image: amazoncorretto:21
+    platform: linux/amd64
     container_name: eureka-server
+    build:
+      context: ./eurekaServer
+      dockerfile: Dockerfile
     ports:
       - "8761:8761"
     networks:
       - load-balancer-network
 
   dummy_server:
-    image: dummy_server
-    container_name: dummy_server
+    image: amazoncorretto:21
+    platform: linux/amd64
+    build:
+      context: ./dummyServer
+      dockerfile: Dockerfile
     ports:
       - "8081:8081"
     networks:
       - load-balancer-network
 
   dummy_server1:
-    image: dummy_server1
-    container_name: dummy_server1
+    image: amazoncorretto:21
+    platform: linux/amd64
+    build:
+      context: ./dummyServer1
+      dockerfile: Dockerfile
     ports:
       - "8082:8082"
     networks:
       - load-balancer-network
 
   load_balancer:
-    image: load_balancer
-    container_name: load_balancer
+    image: amazoncorretto:21
+    platform: linux/amd64
+    build:
+      context: ./loadBalancer
+      dockerfile: Dockerfile
     ports:
       - "8080:8080"
     networks:
