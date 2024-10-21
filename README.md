@@ -11,12 +11,14 @@
 
 git clone을 받은 뒤 루트 폴더에서 다음 명령어를 입력해주세요.
 ```shell
+./gradlew build
+
 docker network create load-balancer-network
 
 docker-compose up --build
 ```
 해당 프로젝트는 여러 어플리케이션이 Docker 환경으로 구성되어 있습니다. 
-따라서, Docker 네트워크를 먼저 구축하여야 합니다.
+따라서, 루트 프로젝트에서 jar 파일을 생성할 수 있게 빌드를 진행한 뒤 Docker 네트워크를 먼저 구축하여야 합니다.
 
 ## 구조
 서비스 구조는 아래와 같습니다.
