@@ -1,4 +1,4 @@
-FROM amd64/amazoncorretto:21
+FROM amazoncorretto:21
 LABEL authors="sohyundoh"
 WORKDIR /app
 EXPOSE 8082

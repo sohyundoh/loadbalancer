@@ -22,7 +22,7 @@ resilience4j:
         failureRateThreshold: 50
         waitDurationInOpenState: 5000
         slowCallRateThreshold : 50
-        minimumNumberOfCalls : 3
+        minimumNumberOfCalls : 10
         permittedNumberOfCallsInHalfOpenState: 5
         registerHealthIndicator: true
       testCircuitBreaker:

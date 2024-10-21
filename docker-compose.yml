@@ -2,8 +2,6 @@ version: '3.8'
 
 services:
   eureka-server:
-    image: amazoncorretto:21
-    platform: linux/amd64
     container_name: eureka-server
     build:
       context: ./eurekaServer
@@ -14,8 +12,6 @@ services:
       - load-balancer-network
 
   dummy_server:
-    image: amazoncorretto:21
-    platform: linux/amd64
     build:
       context: ./dummyServer
       dockerfile: Dockerfile
@@ -26,8 +22,6 @@ services:
       - load-balancer-network
 
   dummy_server1:
-    image: amazoncorretto:21
-    platform: linux/amd64
     build:
       context: ./dummyServer1
       dockerfile: Dockerfile
@@ -38,8 +32,6 @@ services:
       - load-balancer-network
 
   load_balancer:
-    image: amazoncorretto:21
-    platform: linux/amd64
     build:
       context: ./loadBalancer
       dockerfile: Dockerfile
